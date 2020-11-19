@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 gem 'devise'
-#nested scaffold allows you to 
+#nested scaffold allows you to get a scaffold set up with nested attributes without having to configure it all by hand.
 gem 'nested_scaffold'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'

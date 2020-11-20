@@ -26,7 +26,7 @@ class TasksController < ApplicationController
     @task = @project.tasks.build(task_params)
 
     if @task.save
-      redirect_to([@task.project, @task], notice: 'Task was successfully created.')
+      redirect_to @task.project
     else
       render action: 'new'
     end
@@ -45,7 +45,7 @@ class TasksController < ApplicationController
   def destroy
     @task.destroy
 
-    redirect_to project_tasks_url(@project)
+    redirect_to @project
   end
 
   private

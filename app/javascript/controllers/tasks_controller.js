@@ -21,11 +21,11 @@ export default class extends ApplicationController {
   }
   
   sort(event) {
-    
+    //TODO See if you can send over just the stringified task ID's
     let element = document.getElementById('tasks-list')
     let tasks = document.getElementsByClassName('task-item')
     let task_ids = Array.from(tasks).map((task, index) => {
-      return {id: task.dataset.taskId, postion: (index +1)}
+      return {id: task.dataset.taskId, position: (index +1)}
     })
     
     element.dataset.tasks = JSON.stringify(task_ids)

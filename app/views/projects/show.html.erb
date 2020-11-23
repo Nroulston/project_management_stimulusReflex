@@ -39,7 +39,7 @@
       <ul id='tasks-list' data-action="drop->tasks#sort">
         <% @project.tasks.each do |task| %>
           <% if task.persisted? %>
-            <li>
+            <li class='task-item' data-task-id="<%= task.id %>">
               <div class="card mb-3">
                 <div class="card-body">
                   <div class="d-flex justify-content-between">

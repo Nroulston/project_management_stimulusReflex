@@ -21,7 +21,15 @@ export default class extends ApplicationController {
   }
   
   sort(event) {
-    console.log(event)
+    
+    let element = document.getElementById('tasks-list')
+    let tasks = document.getElementsByClassName('task-item')
+    let task_ids = Array.from(tasks).map((task, index) => {
+      return {id: task.dataset.taskId, postion: (index +1)}
+    })
+    
+    element.dataset.tasks = JSON.stringify(task_ids)
+    this.stimulate("TasksReflex#sort", element)
   }
   /* Reflex specific lifecycle methods.
    *

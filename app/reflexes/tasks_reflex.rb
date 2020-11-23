@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 class TasksReflex < ApplicationReflex
+
+  def sort 
+   byebug
+  end
+
   # Add Reflex methods in this file.
   #
   # All Reflex instances expose the following properties:

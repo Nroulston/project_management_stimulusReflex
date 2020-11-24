@@ -1,4 +1,5 @@
 class TaskComponent < ViewComponent::Base
+  
   attr_reader :task
 
   def initialize(task:)

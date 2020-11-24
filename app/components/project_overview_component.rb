@@ -1,4 +1,7 @@
 class ProjectOverviewComponent < ViewComponent::Base
+  extend Forwardable
+
+  delegate [:name, :description, :status] => :@project
   with_collection_parameter :project
   attr_reader :project
 
@@ -6,20 +9,8 @@ class ProjectOverviewComponent < ViewComponent::Base
     @project = project
   end
 
-  def name
-    project.name
-  end
-
-  def description
-    project.description
-  end
-
   def completion_stats
     "#{display_percent_complete} #{display_breakdown}"
-  end
-
-  def status
-    project.status
   end
 
   private

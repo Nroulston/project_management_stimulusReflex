@@ -39,7 +39,7 @@
       <ul id='tasks-list' data-action="drop->tasks#sort">
         <% @project.tasks.order(position: :asc).each do |task| %>
           <% if task.persisted? %>
-            <%= render(TaskComponenent.new(task: task)) %>
+            <%= render(TaskComponent.new(task: task)) %>
            
           <% end %>
         <% end %>
